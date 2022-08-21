@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+.btn-signin-provider {
+    @apply w-full flex items-center justify-center space-x-2 bg-dark-500 py-3 rounded-lg hover:shadow-lg hover:shadow-dark-500/50 transition;
+}
+@tailwind utilities;
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gantari', sans-serif;
+    background-color: #060919;
+    color: #fafafa;
+}
+
+/* Scrollbar Custom */
+
+body::-webkit-scrollbar,
+.sidebar-scroll-custom::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    display: block;
+}
+
+body::-webkit-scrollbar-thumb,
+.sidebar-scroll-custom::-webkit-scrollbar-thumb {
+    background: #1b2d4c;
+    border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:hover,
+.sidebar-scroll-custom::-webkit-scrollbar-thumb:hover {
+    background: #1b2d4cc4;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.219);
+}
+
+body::-webkit-scrollbar-thumb:active,
+.sidebar-scroll-custom::-webkit-scrollbar-thumb:active {
+    background-color: #1b2d4cc4;
+}
+
+body::-webkit-scrollbar-track,
+.sidebar-scroll-custom::-webkit-scrollbar-track {
+    background: #222430;
+    border-radius: 6px;
+}
+
+body::-webkit-scrollbar-track:hover,
+body::-webkit-scrollbar-track:active,
+.sidebar-scroll-custom::-webkit-scrollbar-track:hover,
+.sidebar-scroll-custom::-webkit-scrollbar-track:active {
+    background: #222430;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+.list-exercises {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 1.5rem;
+    justify-items: center;
+    place-content: center;
+}
+
+.list-weights {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-gap: 1rem;
+    place-items: center;
+}
+
+/* Spinner */
+.spinner {
+    margin: 100px auto;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    text-align: center;
+
+    -webkit-animation: sk-rotate 2s infinite linear;
+    animation: sk-rotate 2s infinite linear;
+}
+
+.dot1,
+.dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #06b6d4;
+    border-radius: 100%;
+
+    -webkit-animation: sk-bounce 2s infinite ease-in-out;
+    animation: sk-bounce 2s infinite ease-in-out;
+}
+
+.dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+
+@-webkit-keyframes sk-rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes sk-rotate {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes sk-bounce {
+    0%,
+    100% {
+        -webkit-transform: scale(0);
+    }
+    50% {
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes sk-bounce {
+    0%,
+    100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .list-exercises {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
